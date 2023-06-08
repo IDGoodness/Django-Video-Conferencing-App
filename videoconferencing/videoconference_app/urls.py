@@ -1,7 +1,9 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='register.html'), name='register'),
     path('register/',views.register, name='register'),
     path('login/',views.login_view, name='login'),
     path('dashboard/',views.dashboard, name='dashboard'),    
